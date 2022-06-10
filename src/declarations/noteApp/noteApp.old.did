@@ -1,0 +1,13 @@
+type Note = 
+ record {
+   description: text;
+   id: nat;
+   time: nat;
+   title: text;
+ };
+service : {
+  addNote: (Note) -> (text);
+  deleteNote: (nat) -> (vec Note);
+  getNote: (nat) -> (opt Note) query;
+  getNoteList: () -> (vec Note) query;
+}

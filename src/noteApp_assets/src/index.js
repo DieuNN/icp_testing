@@ -1,19 +1,15 @@
 import { noteApp } from "../../declarations/noteApp";
 
-document.querySelector("form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const button = e.target.querySelector("button");
+document.getElementById('submit').addEventListener('click', async ()=> {
+  let title = document.getElementById('title');
+  let id = document.getElementById('id');
+  let des = document.getElementById('des');
 
-  const name = document.getElementById("name").value.toString();
+  await noteApp.addNote({title:title.value, description:des.value, id:Number(id.value), time:12345})
 
-  button.setAttribute("disabled", true);
+})
 
-  // Interact with foo actor, calling the greet method
-  const greeting = await noteApp.greet(name);
-
-  button.removeAttribute("disabled");
-
-  document.getElementById("greeting").innerText = greeting;
-
-  return false;
-});
+document.getElementById('showList').addEventListener('click', async()=> {
+  let notes = await noteApp.getNoteList()
+  console.log(notes)
+})
