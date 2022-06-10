@@ -9,6 +9,7 @@ Just testing dfx
 Install dfx first, then run
 
 dfx start
+
 dfx deploy
 
 follow the link to test
