@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "noteApp": {
+      "main": "src/noteApp/main.mo",
+      "type": "motoko"
+    },
+    "noteApp_assets": {
+      "dependencies": [
+        "noteApp"
+      ],
+      "frontend": {
+        "entrypoint": "src/noteApp_assets/src/index.html"
+      },
+      "source": [
+        "src/noteApp_assets/assets",
+        "dist/noteApp_assets/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.10.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
